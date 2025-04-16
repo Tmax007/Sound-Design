@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
 
         if (scene.name == "MainMenu")
         {
-            PlayMusic("event:/Music/Menu");
+            PlayMusic("event:/Music/Main_Menu");
         }
     }
 

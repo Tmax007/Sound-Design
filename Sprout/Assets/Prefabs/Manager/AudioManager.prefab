@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5985768133044197643}
   - component: {fileID: 2455599966937481704}
-  - component: {fileID: 416944119504564804}
   - component: {fileID: 3751185056966082503}
   - component: {fileID: 644592706262666542}
   - component: {fileID: 8233310643620878496}
@@ -58,37 +57,6 @@ MonoBehaviour:
       Data3: -1607057223
       Data4: 174868478
     Path: event:/Ambience/Birds
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &416944119504564804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149092826214897204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 97073443
-      Data2: 1311790381
-      Data3: -1986752110
-      Data4: 314081642
-    Path: event:/Ambience/Bugs
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
