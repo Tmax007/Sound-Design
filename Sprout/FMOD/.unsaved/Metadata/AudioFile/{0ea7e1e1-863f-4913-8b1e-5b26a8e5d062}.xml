@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{0ea7e1e1-863f-4913-8b1e-5b26a8e5d062}">
-		<property name="assetPath">
-			<value>Ambience_Area_1.wav</value>
-		</property>
+		<property name="assetPath" />
 		<property name="isStreaming">
 			<value>true</value>
 		</property>
