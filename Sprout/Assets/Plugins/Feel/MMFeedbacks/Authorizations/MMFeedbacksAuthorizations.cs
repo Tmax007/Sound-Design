@@ -471,13 +471,13 @@ namespace MoreMountains.Feedbacks
 			MMF_Rigidbody2D.FeedbackTypeAuthorized = Rigidbody2D;
 			MMF_SetActive.FeedbackTypeAuthorized = SetActive;
 		  
-			#if MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
+			/*#if MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
 			MMF_Haptics.FeedbackTypeAuthorized = HapticClip;
 			MMF_NVContinuous.FeedbackTypeAuthorized = HapticContinuous;
 			MMF_NVControl.FeedbackTypeAuthorized = HapticControl;
 			MMF_NVEmphasis.FeedbackTypeAuthorized = HapticEmphasis;
 			MMF_NVPreset.FeedbackTypeAuthorized = HapticPreset;
-			#endif
+			#endif*/
   
 			MMF_Light.FeedbackTypeAuthorized = Light;
 			MMF_Looper.FeedbackTypeAuthorized = Looper;

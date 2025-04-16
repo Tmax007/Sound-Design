@@ -97,15 +97,15 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             Interact();
             CheckFalling();
             UpdateSpriteDirection();
-            
-            if(currentItemBeingCarried == null)
+
+            if (currentItemBeingCarried == null)
             {
                 ThrowSeed();
             }
         }
         else
         {
-            if(isBeingLaunched)
+            if (isBeingLaunched)
             {
                 HandleBouncyPadGravity();
             }
@@ -117,11 +117,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
         HandlePoisionGas();
 
-        if(Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             uiManager.DisplayControls();
         }
-        if(Input.GetKeyUp(KeyCode.M))
+        if (Input.GetKeyUp(KeyCode.M))
         {
             uiManager.StopDisplayingControls();
         }
@@ -131,7 +131,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
     {
         if (!isBeingLaunched)
         {
-            if(CheckGround() == true)
+            if (CheckGround() == true)
             {
                 MoveCharacter();
             }
@@ -158,11 +158,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             {
                 WalkingFeedback.PlayFeedbacks();
                 //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Walking");
-    }
+            }
 
             isWalking = true;
         }
-        else if (isWalking) 
+        else if (isWalking)
         {
             // Stop feedback when player stops moving
             WalkingFeedback?.StopFeedbacks();
@@ -183,7 +183,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         {
             Vector2 normalizedMovement = movement.normalized;
             rb.linearVelocity = new Vector3(normalizedMovement.x * moveSpeed, rb.linearVelocity.y, normalizedMovement.y * moveSpeed);
-            
+
             // Play walking feedback only when movement input is detected
             if (WalkingFeedback != null && !WalkingFeedback.IsPlaying)
             {
@@ -214,7 +214,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
     // Throw a seed in the direction the player is facing
     void ThrowSeed()
     {
-        if(uiManager.CanPlantSeed())
+        if (uiManager.CanPlantSeed())
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
             {
@@ -225,8 +225,8 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                 if (didHit && hit.transform.CompareTag("GrowableGround") && !IsSeedOnPlantLocation(new Vector2(hit.transform.position.x, hit.transform.position.z)))
                 {
                     GameObject seed;
-                    
-                    if((Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.J)) && hasUnlockedVineSeed)
+
+                    if ((Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.J)) && hasUnlockedVineSeed)
                     {
                         //$Player Planting for vine seed
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Planting");
@@ -249,12 +249,12 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
                         plantedSeed.Add(seed.GetComponent<GrowableSproutBaseClass>());
 
-                        if(snapSeedToGrid)
+                        if (snapSeedToGrid)
                         {
                             seed.transform.position = new Vector3(hit.transform.position.x, seed.transform.position.y, hit.transform.position.z);
                         }
                     }
-                    else if(hasUnlockedBouncyPadSeed)
+                    else if (hasUnlockedBouncyPadSeed)
                     {
                         //$Player Planting for bouncy seed
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Planting");
@@ -286,11 +286,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             }
         }
 
-        if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.J))
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.J))
         {
             vineButtonHeldDownTimer += Time.deltaTime;
 
-            if(vineButtonHeldDownTimer > 1f)
+            if (vineButtonHeldDownTimer > 1f)
             {
                 //$Player Realling Vine Seed
                 if (plantedSeed.Count > 0)
@@ -301,21 +301,21 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                 //realingSFX.start();
                 foreach (var seed in plantedSeed.ToList())
                 {
-                    if(seed != null)
+                    if (seed != null)
                     {
-                        if(seed.transform.GetComponent<VineSeed>() != null)
+                        if (seed.transform.GetComponent<VineSeed>() != null)
                         {
                             seed.GrowSprout(5f, new Vector2(facingDirection.x, facingDirection.z));
                             seed.transform.GetComponentInChildren<VinePlant>().UnGrow();
                             plantedSeed.Remove(seed);
                         }
-                        
+
                     }
                 }
             }
         }
 
-        if(Input.GetMouseButton(1) || Input.GetKey(KeyCode.K))
+        if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.K))
         {
             bouncyPadButtonHeldDownTimer += Time.deltaTime;
 
@@ -347,7 +347,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             }
         }
 
-        if(Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.J))
+        if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.J))
         {
             vineButtonHeldDownTimer = 0f;
         }
@@ -362,7 +362,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
     // Handle player interaction (e.g., picking up items, activating objects)
     void Interact()
     {
-        if(currentItemBeingCarried == null)
+        if (currentItemBeingCarried == null)
         {
             if (Input.GetKey(KeyCode.E))
             {
@@ -374,7 +374,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                 //check if ray hits
                 bool didHit = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), facingDirection, out hit, 1f);
 
-                if(didHit && (hit.transform.gameObject.GetComponent<IInteractable>() != null || hit.transform.gameObject.GetComponent<ThrowableBaseClass>()))
+                if (didHit && (hit.transform.gameObject.GetComponent<IInteractable>() != null || hit.transform.gameObject.GetComponent<ThrowableBaseClass>()))
                 {
                     hitObject = hit.transform.gameObject;
                 }
@@ -382,13 +382,13 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                 {
                     didHit = IsInteractableOverlap(out hitObject);
                 }
-            
+
                 //shoot raycast towards the facing direction, getting IInteractable interface from the object hit
                 if (hitObject != null && hitObject.GetComponent<IInteractable>() != null)
                 {
                     //$Player Interact
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Interacting");
-                    
+
                     //store object currently interacted wtih
                     currentIntractedObject = hitObject;
 
@@ -396,7 +396,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                     hitObject.GetComponent<IInteractable>().OnStartInteract();
                     //InteractingFeedback.PlayFeedbacks();
                 }
-                else if(hitObject != null && hitObject.GetComponent<ThrowableBaseClass>() != null)
+                else if (hitObject != null && hitObject.GetComponent<ThrowableBaseClass>() != null)
                 {
                     //$Picking Up
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Picking Up");
@@ -407,7 +407,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                 else
                 {
                     //if raycast didn't hit anything
-                    if(currentIntractedObject != null)
+                    if (currentIntractedObject != null)
                     {
                         //call OnStopInteraction function from IInteractable interface
                         currentIntractedObject.GetComponent<IInteractable>().OnStopInteract();
@@ -417,18 +417,18 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             }
 
             //if the interact key was let go
-            if(Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 if (currentIntractedObject != null)
                 {
                     currentIntractedObject.GetComponent<IInteractable>().OnStopInteract();
-                    currentIntractedObject = null; 
+                    currentIntractedObject = null;
                 }
             }
         }
-        else if(currentItemBeingCarried != null)
+        else if (currentItemBeingCarried != null)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 //$Player Throwing
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Throwing");
@@ -503,7 +503,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         {
             timeSinceFalling += Time.deltaTime;
 
-            if(timeSinceFalling > voidOutTime)
+            if (timeSinceFalling > voidOutTime)
             {
                 //TODO: Add void out
             }
@@ -554,7 +554,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         bool left = Physics.Raycast(transform.position + new Vector3(-0.5f, 0.5f, 0f), Vector3.down, out hitLeft, 2f);
         bool rigth = Physics.Raycast(transform.position + new Vector3(0.5f, 0.5f, 0f), Vector3.down, out hitRight, 2f);
 
-        if(up || down || left || rigth)
+        if (up || down || left || rigth)
         {
             return true;
         }
@@ -565,11 +565,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         }
 
         //return true;  //Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), Vector3.down, out hit, 2f);
-    } 
+    }
 
     private void OnCollisionEnter(Collision collision)
-    { 
-        if(isBeingLaunched && hasBeenLaunched)
+    {
+        if (isBeingLaunched && hasBeenLaunched)
         {
             isBeingLaunched = false;
             rb.useGravity = true;
@@ -580,7 +580,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
     {
         if (other.GetComponent<PoisonGas>())
         {
-            if(other.GetComponent<PoisonGas>().gasIsActve == true)
+            if (other.GetComponent<PoisonGas>().gasIsActve == true)
             {
                 isInPoisionGas = true;
             }
@@ -636,7 +636,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
     private void HandlePoisionGas()
     {
-        if(isInPoisionGas)
+        if (isInPoisionGas)
         {
             timeInPoisonGas += Time.deltaTime;
         }
@@ -647,7 +647,7 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
         timeInPoisonGas = Mathf.Clamp(timeInPoisonGas, 0f, poisonGasTimeToKill);
 
-        if(timeInPoisonGas >= poisonGasTimeToKill)
+        if (timeInPoisonGas >= poisonGasTimeToKill)
         {
             Respawn respawnComponent = GetComponent<Respawn>();
             respawnComponent.RespawnPlayer();
@@ -667,15 +667,15 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
     private bool IsSeedOnPlantLocation(Vector2 tileLocation)
     {
-        foreach(var seed in plantedSeed)
+        foreach (var seed in plantedSeed)
         {
-            if(seed != null)
+            if (seed != null)
             {
                 Vector2 plantedSeedLocation = new Vector2(seed.transform.position.x, seed.transform.position.z);
 
                 Debug.Log(Vector2.Distance(tileLocation, plantedSeedLocation));
 
-                if(Vector2.Distance(tileLocation, plantedSeedLocation) < 0.01f)
+                if (Vector2.Distance(tileLocation, plantedSeedLocation) < 0.01f)
                 {
                     Debug.Log("There is seed");
 
