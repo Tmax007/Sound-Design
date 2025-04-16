@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2a9b8804-1af3-4f40-bd57-2d4b76b05246}">
 		<property name="name">
-			<value>Bomb Door Exploding</value>
+			<value>Bomb_Door_Exploding</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{3214115b-863e-4965-9826-3a6396a8d25a}</destination>
+			<destination>{1b3a5dbe-954c-475a-8651-721e23df1221}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{1b93abf1-eba1-4221-8843-357bde561bb7}</destination>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{ec618a3d-9807-4252-a808-f87f054cb7a4}" />
 	<object class="GroupTrack" id="{fdf1b341-656f-4281-8ba2-da376ae479f3}">
 		<relationship name="modules">
-			<destination>{e0116335-cf84-41ef-bb6d-74b3d5ba7b07}</destination>
+			<destination>{79fe73f4-5d12-438a-a2eb-1e8f6535d7a6}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{36d0dd44-4461-4433-b69a-334c294447e6}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{0c4a76d0-9e83-4e92-9281-8603e5db1464}">
 		<relationship name="modules">
-			<destination>{e0116335-cf84-41ef-bb6d-74b3d5ba7b07}</destination>
+			<destination>{79fe73f4-5d12-438a-a2eb-1e8f6535d7a6}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fb1cee0b-b6b9-41ce-8875-ba412249c562}">
@@ -88,12 +88,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2d2e8703-90a3-47ae-bf06-14f7b2021836}" />
-	<object class="SingleSound" id="{e0116335-cf84-41ef-bb6d-74b3d5ba7b07}">
+	<object class="SingleSound" id="{79fe73f4-5d12-438a-a2eb-1e8f6535d7a6}">
 		<property name="length">
 			<value>1.9294374999999999</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{f954a5ec-abcd-47b9-b665-e4533728c512}</destination>
+			<destination>{d61db8b5-9ea1-4902-b285-5a2fcd80005c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{36d0dd44-4461-4433-b69a-334c294447e6}">

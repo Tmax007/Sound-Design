@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{063c9bb0-c6d1-4ec3-87b8-aa77fbc39b08}">
 		<property name="name">
-			<value>Poison Gas Disappearing</value>
+			<value>Poison_Gas_Disappearing</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{3214115b-863e-4965-9826-3a6396a8d25a}</destination>
+			<destination>{83489e7b-bf35-4564-bbd4-b3a0bd66be3d}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{806df768-b234-49ba-8937-cbf1c3286fb5}</destination>
@@ -64,7 +64,7 @@
 	<object class="MarkerTrack" id="{3511a73f-2b52-466c-991a-169a8ee9db3e}" />
 	<object class="GroupTrack" id="{61de0833-634e-4f74-ad82-6a9ac2400bf8}">
 		<relationship name="modules">
-			<destination>{ef4a4a38-c6e6-4186-9667-238809024ec5}</destination>
+			<destination>{ecb54609-34fb-41fe-9f8e-372f858c39dd}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{998af053-9987-44f2-ba5a-f084416192f0}</destination>
@@ -72,7 +72,7 @@
 	</object>
 	<object class="Timeline" id="{04d2a531-ae0b-4e09-ace8-fb2d087ebb79}">
 		<relationship name="modules">
-			<destination>{ef4a4a38-c6e6-4186-9667-238809024ec5}</destination>
+			<destination>{ecb54609-34fb-41fe-9f8e-372f858c39dd}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{13d920d7-9b63-4cef-94be-3317bdeb5af7}">
@@ -95,12 +95,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a01bca2a-825a-4cb8-9f40-860bbb544103}" />
-	<object class="SingleSound" id="{ef4a4a38-c6e6-4186-9667-238809024ec5}">
+	<object class="SingleSound" id="{ecb54609-34fb-41fe-9f8e-372f858c39dd}">
 		<property name="length">
 			<value>1.8400000000000001</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{f52a1288-976f-41ef-a919-4b1b104feefd}</destination>
+			<destination>{97fd2eca-941b-481a-9cc9-bcdc51f7e40a}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{998af053-9987-44f2-ba5a-f084416192f0}">

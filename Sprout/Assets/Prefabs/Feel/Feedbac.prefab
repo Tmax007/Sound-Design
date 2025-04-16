@@ -667,7 +667,7 @@ MonoBehaviour:
       Data2: 1304653965
       Data3: 821359770
       Data4: -1296609424
-    Path: event:/Sound Effects/Machine Trapped
+    Path: event:/Sound Effects/Machine Sounds/Machine_Trapped
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
       Data2: 1124861662
       Data3: 1705397137
       Data4: -1605989014
-    Path: event:/Sound Effects/Bomb Bouncing
+    Path: event:/Sound Effects/Bomb Sounds/Bomb_Bouncing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1929,7 +1929,7 @@ MonoBehaviour:
       Data2: 1329601267
       Data3: 1261262781
       Data4: 1179824246
-    Path: event:/Sound Effects/Bomb Door Exploding
+    Path: event:/Sound Effects/Bomb Sounds/Bomb_Door_Exploding
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1992,7 +1992,7 @@ MonoBehaviour:
       Data2: 1304343298
       Data3: 281008575
       Data4: 1142218572
-    Path: event:/Sound Effects/Using Mana Bar
+    Path: event:/Sound Effects/Mana_Bar_Used
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -2314,7 +2314,7 @@ MonoBehaviour:
       Data2: 1173186323
       Data3: -1460572771
       Data4: 734286165
-    Path: event:/Sound Effects/Bomb Exploding
+    Path: event:/Sound Effects/Bomb Sounds/Bomb_Exploding
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -2377,7 +2377,7 @@ MonoBehaviour:
       Data2: 1177932909
       Data3: 755895953
       Data4: 1272243873
-    Path: event:/Sound Effects/Poison Gas
+    Path: event:/Sound Effects/Poison Gas/Poison_Gas
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -2440,7 +2440,7 @@ MonoBehaviour:
       Data2: 1098954670
       Data3: -1038384206
       Data4: 160867538
-    Path: event:/Sound Effects/Moving Platform
+    Path: event:/Sound Effects/Moving_Platform
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -3138,7 +3138,7 @@ MonoBehaviour:
       Data2: 1088100101
       Data3: -1818499394
       Data4: -405103971
-    Path: event:/Sound Effects/Wind Fan Working
+    Path: event:/Sound Effects/Wind_Fan_Working
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -3394,7 +3394,7 @@ MonoBehaviour:
       Data2: 1331902573
       Data3: -1154895216
       Data4: -470050309
-    Path: event:/Sound Effects/Flower Door Open
+    Path: event:/Sound Effects/Flower_Door_Open
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -3425,7 +3425,7 @@ MonoBehaviour:
       Data2: 1216700797
       Data3: -1028954466
       Data4: -1472960535
-    Path: event:/Sound Effects/Machine Door Open
+    Path: event:/Sound Effects/Machine Sounds/Machine_Door_Open
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -3719,7 +3719,7 @@ MonoBehaviour:
       Data2: 1321453265
       Data3: 2007677063
       Data4: 144425979
-    Path: event:/Sound Effects/Poison Gas Disappearing
+    Path: event:/Sound Effects/Poison Gas/Poison_Gas_Disappearing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -4925,7 +4925,7 @@ MonoBehaviour:
       Data2: 1105206792
       Data3: -1230447953
       Data4: 1996637430
-    Path: event:/Sound Effects/Machine Working
+    Path: event:/Sound Effects/Machine Sounds/Machine_Working
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -5903,7 +5903,7 @@ MonoBehaviour:
       Data2: 1277217020
       Data3: 1248405633
       Data4: -1035459252
-    Path: event:/Sound Effects/Seed Growing
+    Path: event:/Sound Effects/Seed_Growing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0

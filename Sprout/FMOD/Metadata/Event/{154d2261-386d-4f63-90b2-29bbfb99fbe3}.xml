@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{154d2261-386d-4f63-90b2-29bbfb99fbe3}">
 		<property name="name">
-			<value>Flower Door Open</value>
+			<value>Flower_Door_Open</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{aef94c52-52c5-404a-b8c9-f9a38eff61f1}" />
 	<object class="GroupTrack" id="{7990dded-d991-4a02-b003-954cf85c495e}">
 		<relationship name="modules">
-			<destination>{e32ac5cb-9006-4b1d-870d-8f22e7cbd58a}</destination>
+			<destination>{96ea2099-0f70-4a93-b403-5033826bfe5a}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{947669a2-b06e-47e8-a653-049aba6a62dd}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{f47b05c1-b4e3-4c09-83c9-bf750df31574}">
 		<relationship name="modules">
-			<destination>{e32ac5cb-9006-4b1d-870d-8f22e7cbd58a}</destination>
+			<destination>{96ea2099-0f70-4a93-b403-5033826bfe5a}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{81b45012-f4c7-4380-bd36-fb4b8e9741ea}">
@@ -91,12 +91,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{098e7ee9-4847-40d5-bc41-b1a0cd7224c4}" />
-	<object class="SingleSound" id="{e32ac5cb-9006-4b1d-870d-8f22e7cbd58a}">
+	<object class="SingleSound" id="{96ea2099-0f70-4a93-b403-5033826bfe5a}">
 		<property name="length">
 			<value>0.83225000000000005</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{44a07806-9da4-4fd2-9bc4-264e6c73487e}</destination>
+			<destination>{68bf819b-6465-4a54-ad6a-bdbdee887ab2}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{947669a2-b06e-47e8-a653-049aba6a62dd}">

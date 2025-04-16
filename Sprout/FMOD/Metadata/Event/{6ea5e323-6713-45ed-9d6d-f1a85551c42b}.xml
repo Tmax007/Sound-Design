@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6ea5e323-6713-45ed-9d6d-f1a85551c42b}">
 		<property name="name">
-			<value>Bomb Exploding</value>
+			<value>Bomb_Exploding</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{3214115b-863e-4965-9826-3a6396a8d25a}</destination>
+			<destination>{1b3a5dbe-954c-475a-8651-721e23df1221}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{925e7b5d-7703-49ef-8b65-7f06ed6d43e1}</destination>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{090d0b6a-c9e7-4677-a122-d317fbf92c1c}" />
 	<object class="GroupTrack" id="{dbca9f07-1dbe-4479-9c8e-b45ab075aba7}">
 		<relationship name="modules">
-			<destination>{92bceb3a-0a4e-45ee-8a59-5be6e86c1fb8}</destination>
+			<destination>{23c737d6-a957-437b-a22d-a95df4f014f6}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{b5a89d92-dd92-4680-a146-c45eb19dbbb6}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{469b237d-d4f2-4b04-b822-4ae772a614ba}">
 		<relationship name="modules">
-			<destination>{92bceb3a-0a4e-45ee-8a59-5be6e86c1fb8}</destination>
+			<destination>{23c737d6-a957-437b-a22d-a95df4f014f6}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{16c85a57-20ee-47fc-8839-ab33e1469654}">
@@ -88,12 +88,15 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{259e5715-2eb2-4a85-b939-32a2089ffa50}" />
-	<object class="SingleSound" id="{92bceb3a-0a4e-45ee-8a59-5be6e86c1fb8}">
+	<object class="SingleSound" id="{23c737d6-a957-437b-a22d-a95df4f014f6}">
 		<property name="length">
 			<value>2.2666666666666666</value>
 		</property>
+		<property name="pitch">
+			<value>10</value>
+		</property>
 		<relationship name="audioFile">
-			<destination>{c01e1fcb-4d4f-4d04-b019-03fecba9f0e8}</destination>
+			<destination>{6938ac20-30a2-4048-b411-74f952571a2c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b5a89d92-dd92-4680-a146-c45eb19dbbb6}">

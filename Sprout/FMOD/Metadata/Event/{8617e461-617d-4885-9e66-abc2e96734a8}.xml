@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8617e461-617d-4885-9e66-abc2e96734a8}">
 		<property name="name">
-			<value>Machine Door Open</value>
+			<value>Machine_Door_Open</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{3214115b-863e-4965-9826-3a6396a8d25a}</destination>
+			<destination>{f222d2d4-424d-4e06-ae34-7b3c14e915bc}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{0e74bbd9-ead2-47fa-a694-0b268190da7f}</destination>
@@ -64,7 +64,7 @@
 	<object class="MarkerTrack" id="{24bf7e10-848e-48b7-9942-8e0f79eb7e80}" />
 	<object class="GroupTrack" id="{465e7554-1351-47f4-a5f9-9d3b8df5f213}">
 		<relationship name="modules">
-			<destination>{57107b65-efed-4b2c-abfb-bff897831d6c}</destination>
+			<destination>{6fbed145-a7c3-451f-87dc-ffbd8f2afc61}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{70b17e1e-6c65-483a-b6a5-d43d6487b1e7}</destination>
@@ -72,7 +72,7 @@
 	</object>
 	<object class="Timeline" id="{a58ef235-c438-4a2f-82bc-9b7ae6309362}">
 		<relationship name="modules">
-			<destination>{57107b65-efed-4b2c-abfb-bff897831d6c}</destination>
+			<destination>{6fbed145-a7c3-451f-87dc-ffbd8f2afc61}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1e7f86c7-bdce-4e83-a188-b988cfa0be8f}">
@@ -95,12 +95,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e14f3761-1143-40a2-91a6-509cb8e9574a}" />
-	<object class="SingleSound" id="{57107b65-efed-4b2c-abfb-bff897831d6c}">
+	<object class="SingleSound" id="{6fbed145-a7c3-451f-87dc-ffbd8f2afc61}">
 		<property name="length">
 			<value>0.88587499999999997</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{cfb6a2f4-d000-43db-b9bc-415fba88293c}</destination>
+			<destination>{b880ee3c-a77d-4f72-88c6-9dc8db2f1e27}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{70b17e1e-6c65-483a-b6a5-d43d6487b1e7}">
