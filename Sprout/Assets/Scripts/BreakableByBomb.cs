@@ -1,6 +1,6 @@
 using System.Globalization;
 using UnityEngine;
-
+using FMODUnity;
 public class BreakableByBomb : MonoBehaviour
 {
     public int numberOfDebris = 4;
@@ -24,7 +24,7 @@ public class BreakableByBomb : MonoBehaviour
     public void Break()
     {
         //$Bomb Door Open
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Door Exploding");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Sounds/Bomb_Door_Exploding",transform.position);
         mesh.SetActive(false);
         Destroy(boxCollider);
 

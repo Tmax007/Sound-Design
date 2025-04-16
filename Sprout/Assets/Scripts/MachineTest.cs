@@ -30,12 +30,12 @@ public class MachineTest : MonoBehaviour, IVineInteractable
         //$Machine Working
         //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Machine Working");
 
-        machineWorking = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Working");
+        machineWorking = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Sounds/Machine_Working 2");
         machineWorking.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         machineWorking.start();
 
 
-        machineTrapped = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Trapped");
+        machineTrapped = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Sounds/Machine_Trapped 2");
         machineTrapped.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         machineTrapped.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 

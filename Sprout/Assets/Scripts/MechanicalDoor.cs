@@ -1,6 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-
+using FMODUnity;
 public class MechanicalDoor : MonoBehaviour, IActivatable
 {
     private int numOfSpiritFlowers = 0;
@@ -37,13 +37,13 @@ public class MechanicalDoor : MonoBehaviour, IActivatable
         if (isActivated)
         {
             //$Machine Door Open
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Machine Door Open");
+            
             lerpAlpha += Time.deltaTime / timeToOpenDoor;
         }
         else
         {
             //$Machine Door Close
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Machine Door Open");
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Machine Sounds/Machine_Door_Open", transform.position);
             lerpAlpha -= Time.deltaTime / timeToOpenDoor;
         }
 
@@ -59,11 +59,13 @@ public class MechanicalDoor : MonoBehaviour, IActivatable
 
     public void Activate()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Machine Sounds/Machine_Door_Open", transform.position);
         isActivated = true;
     }
 
     public void Deactivate()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Machine Sounds/Machine_Door_Open", transform.position);
         isActivated = false;
     }
 }

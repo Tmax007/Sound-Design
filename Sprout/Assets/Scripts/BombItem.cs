@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor;
+using FMODUnity;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 public class Bomb : MonoBehaviour
@@ -47,6 +48,9 @@ public class Bomb : MonoBehaviour
         {
             StartCoroutine(BombFuseDelay(explosionDelay));
             isActivated = true;
+
+            // Play fuse sound with FMOD
+            RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Sounds/Bomb_Fuse", transform.position);
             fuseParticleEffect.Play();
         }
     }
@@ -59,9 +63,9 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        //$Bomb Explode
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Exploding");
-        //BombExplodeFeedback.PlayFeedbacks();
+        // Play explosion sound with FMOD
+        RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Sounds/Bomb_Exploding", transform.position);
+
         fuseParticleEffect.Stop();
         Instantiate(explosionParticleEffect, transform.position, Quaternion.identity);
         Instantiate(debriParticleEffect, transform.position, Quaternion.identity);

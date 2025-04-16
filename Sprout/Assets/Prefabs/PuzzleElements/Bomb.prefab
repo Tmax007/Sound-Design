@@ -5042,6 +5042,9 @@ GameObject:
   - component: {fileID: 1163980851117686860}
   - component: {fileID: 1933241311814672991}
   - component: {fileID: 6740924189175238984}
+  - component: {fileID: 6228935143020134809}
+  - component: {fileID: 7975662680157678837}
+  - component: {fileID: 4176071180219681138}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -5174,3 +5177,97 @@ MonoBehaviour:
   explosionParticleEffect: {fileID: 3380212393518243875, guid: 1f0ccd13f08e73e48bdc9e08e6cdb5d1, type: 3}
   debriParticleEffect: {fileID: 4615732509355361062, guid: c8718dba49a455242bdb8d1a47186468, type: 3}
   respawnThresholdY: -10
+  BombExplodeFeedback: {fileID: 0}
+--- !u!114 &6228935143020134809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928983551098158604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1856365347
+      Data2: 1173186323
+      Data3: -1460572771
+      Data4: 734286165
+    Path: event:/Sound Effects/Bomb Sounds/Bomb_Exploding
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &7975662680157678837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928983551098158604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2046680606
+      Data2: 1124861662
+      Data3: 1705397137
+      Data4: -1605989014
+    Path: event:/Sound Effects/Bomb Sounds/Bomb_Bouncing
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4176071180219681138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928983551098158604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1189776124
+      Data2: 1121721124
+      Data3: 723008441
+      Data4: 941096716
+    Path: event:/Sound Effects/Bomb Sounds/Bomb_Fuse
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

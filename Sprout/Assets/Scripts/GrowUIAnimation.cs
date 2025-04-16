@@ -20,7 +20,7 @@ public class GrowUIAnimation : MonoBehaviour
     void Start()
     {
         //$Mana UI Bar Usage
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Using Mana Bar");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Mana_Bar_Used");
         transform.position = startingPosition;
         trail.Play();
         startEffect.Play();

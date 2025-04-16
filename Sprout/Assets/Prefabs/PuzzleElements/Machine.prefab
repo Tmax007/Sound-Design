@@ -308,6 +308,8 @@ GameObject:
   - component: {fileID: 4275991659848837439}
   - component: {fileID: 814802680334511889}
   - component: {fileID: 213668058060997575}
+  - component: {fileID: 6433682595975657255}
+  - component: {fileID: 5892491733292671228}
   m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
@@ -365,7 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5abfd6fd18aba4bb99a2ac5e37d703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedObjects: []
+  connectedObjects:
+  - {fileID: 0}
   vineTransform: {fileID: 9067109389774509667}
   machineMesh: {fileID: 5146843909246889109}
   gears: {fileID: 997225085155054792}
@@ -397,6 +400,68 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6433682595975657255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870668622742465571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1678806847
+      Data2: 1105206792
+      Data3: -1230447953
+      Data4: 1996637430
+    Path: event:/Sound Effects/Machine Sounds/Machine_Working
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &5892491733292671228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870668622742465571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 110150816
+      Data2: 1304653965
+      Data3: 821359770
+      Data4: -1296609424
+    Path: event:/Sound Effects/Machine Sounds/Machine_Trapped
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5617804007270851355
 GameObject:
   m_ObjectHideFlags: 0

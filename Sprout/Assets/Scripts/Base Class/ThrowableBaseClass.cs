@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using FMODUnity;
 public class ThrowableBaseClass : MonoBehaviour, ILaunchable
 {
     public delegate void OnPickUp();
@@ -156,7 +156,7 @@ public class ThrowableBaseClass : MonoBehaviour, ILaunchable
     public void Launch(Vector2 direction, float height, float distance, float timeToDestination, Vector3 launchPosition)
     {
         //$Bomb Bouncing
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Bouncing");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Sounds/Bomb_Bouncing",transform.position);
         height *= 2;
         rb.useGravity = false;
         launchGravity = 0f;

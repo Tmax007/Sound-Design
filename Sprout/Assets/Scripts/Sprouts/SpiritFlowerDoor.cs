@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using FMODUnity;
 public class SpiritFlowerDoor : MonoBehaviour
 {
     public SpiritFlower[] spiritFlowers;
@@ -14,21 +14,19 @@ public class SpiritFlowerDoor : MonoBehaviour
     private Vector3 endPosition;
 
     private bool hasAllFlowerGrown = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool doorSoundPlayed = false;
+
     void Start()
     {
         numOfSpiritFlowers = spiritFlowers.Length;
 
         startPosition = transform.position;
-
         endPosition = transform.position - new Vector3(0, 3f, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckFlowers();
-
         HandleOpenDoor();
     }
 
@@ -37,39 +35,35 @@ public class SpiritFlowerDoor : MonoBehaviour
         numOfGrownFlowers = 0;
         foreach (var flower in spiritFlowers)
         {
-            if(flower.hasGrown)
+            if (flower.hasGrown)
             {
                 numOfGrownFlowers++;
             }
         }
 
-        if(numOfGrownFlowers ==  numOfSpiritFlowers)
-        {
-            hasAllFlowerGrown = true;
-        }
-        else
-        {
-            hasAllFlowerGrown = false;
-        }
+        hasAllFlowerGrown = (numOfGrownFlowers == numOfSpiritFlowers);
     }
 
     void HandleOpenDoor()
     {
         if (hasAllFlowerGrown)
         {
-            //Flower Door Open
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Flower Door Open");
+            if (!doorSoundPlayed)
+            {
+                // $Flower Door Open
+                RuntimeManager.PlayOneShot("event:/Sound Effects/Flower_Door_Open", transform.position);
+                doorSoundPlayed = true;
+            }
+
             lerpAlpha += Time.deltaTime / timeToOpenDoor;
         }
         else
         {
-            //Flower Door Close
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Flower Door Open");
+            doorSoundPlayed = false; // Reset if not all flowers are grown
             lerpAlpha -= Time.deltaTime / timeToOpenDoor;
         }
 
         lerpAlpha = Mathf.Clamp01(lerpAlpha);
-
         transform.position = Vector3.Lerp(startPosition, endPosition, lerpAlpha);
     }
 }
