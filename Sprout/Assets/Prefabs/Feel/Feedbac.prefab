@@ -51,7 +51,7 @@ MonoBehaviour:
       Data2: 1207894104
       Data3: 969724035
       Data4: 447414490
-    Path: event:/Sound Effects/Player Sounds/Player Bouncing
+    Path: event:/Sound Effects/Player Sounds/Player_Bouncing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
       Data2: 1154721808
       Data3: 1969336248
       Data4: -387710397
-    Path: event:/Sound Effects/Player Sounds/Player Planting
+    Path: event:/Sound Effects/Player Sounds/Player_Planting
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1579,7 +1579,7 @@ MonoBehaviour:
       Data2: 1149928717
       Data3: -1728058971
       Data4: 1174907636
-    Path: event:/Sound Effects/Player Sounds/Player Recalling
+    Path: event:/Sound Effects/Player Sounds/Player_Recalling
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1642,7 +1642,7 @@ MonoBehaviour:
       Data2: 1141379079
       Data3: -1148828482
       Data4: 709302720
-    Path: event:/Sound Effects/Player Sounds/Player Overgrowing
+    Path: event:/Sound Effects/Player Sounds/Player_Overgrowing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -2055,7 +2055,7 @@ MonoBehaviour:
       Data2: 1241623043
       Data3: -1031484529
       Data4: 1243701232
-    Path: event:/Sound Effects/Player Sounds/Player Picking Up
+    Path: event:/Sound Effects/Player Sounds/Player_Picking_Up
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -4503,7 +4503,7 @@ MonoBehaviour:
       Data2: 1325604843
       Data3: -502976111
       Data4: 2004724157
-    Path: event:/Sound Effects/Player Sounds/Player Dying
+    Path: event:/Sound Effects/Player Sounds/Player_Dying
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -5640,7 +5640,7 @@ MonoBehaviour:
       Data2: 1228249720
       Data3: -736330333
       Data4: 225107428
-    Path: event:/Sound Effects/Player Sounds/Player Interacting
+    Path: event:/Sound Effects/Player Sounds/Player_Interacting
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0

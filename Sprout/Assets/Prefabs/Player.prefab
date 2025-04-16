@@ -720,7 +720,7 @@ MonoBehaviour:
       Data2: 1247728733
       Data3: -1112072312
       Data4: 783494182
-    Path: event:/Sound Effects/Player Sounds/Player Throwing
+    Path: event:/Sound Effects/Player Sounds/Player_Throwing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
       Data2: 1247728733
       Data3: -1112072312
       Data4: 783494182
-    Path: event:/Sound Effects/Player Sounds/Player Throwing
+    Path: event:/Sound Effects/Player Sounds/Player_Throwing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1677,7 +1677,7 @@ MonoBehaviour:
       Data2: 1328123393
       Data3: -616069224
       Data4: -814600315
-    Path: event:/Sound Effects/Player Sounds/Player Growing
+    Path: event:/Sound Effects/Player Sounds/Player_Growing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1708,7 +1708,7 @@ MonoBehaviour:
       Data2: 1328123393
       Data3: -616069224
       Data4: -814600315
-    Path: event:/Sound Effects/Player Sounds/Player Growing
+    Path: event:/Sound Effects/Player Sounds/Player_Growing
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -2214,7 +2214,7 @@ MonoBehaviour:
       Data2: 1236025069
       Data3: -1130574688
       Data4: -837539257
-    Path: event:/Sound Effects/Player Sounds/Player Walking
+    Path: event:/Sound Effects/Player Sounds/Player_Walking
   Event: 
   EventPlayTrigger: 3
   EventStopTrigger: 0
