@@ -1,10 +1,12 @@
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using FMODUnity;
 public class Respawn : MonoBehaviour
 {
     public float fallThreshold = -10f; // If the player falls below this, they respawn
     private CameraController cameraController;
     public MMF_Player DyingFeedback;
+    [EventRef] public string dyingEvent = "event:/Sound Effects/Player Sounds/Player_Dying";
     void Start()
     {
         cameraController = FindObjectOfType<CameraController>();
@@ -22,7 +24,7 @@ public class Respawn : MonoBehaviour
     {
         //$Player Dying
         DyingFeedback.PlayFeedbacks();
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Dying");
+        FMODUnity.RuntimeManager.PlayOneShot(dyingEvent, transform.position);
         if (cameraController != null && cameraController.currentCheckpoint != null)
         {
             transform.position = cameraController.currentCheckpoint.position;

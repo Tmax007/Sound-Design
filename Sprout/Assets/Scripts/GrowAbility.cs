@@ -2,6 +2,7 @@
 using UnityEngine;
 using System;
 using MoreMountains.Feedbacks;
+using FMODUnity;
 
 public class GrowAbility : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GrowAbility : MonoBehaviour
     [SerializeField] private ParticleSystem growParticles;
     [SerializeField] private float particleMovementSpeed = 13.33f;
 
+    [EventRef] public string growingEvent = "event:/Sound Effects/Player Sounds/Player_Growing";
+    [EventRef] public string overgrowingEvent = "event:/Sound Effects/Player Sounds/Player_Overgrowing";
     public GameObject UITest;
 
     /// a MMF_Player to play when player
@@ -53,7 +56,7 @@ public class GrowAbility : MonoBehaviour
         if(uiManager.currentMana > 0)
         {
             //$Player Growing
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Growing");
+            FMODUnity.RuntimeManager.PlayOneShot(growingEvent, transform.position);
             RaycastHit hit;
 
             GameObject hitObject = null;
@@ -93,7 +96,7 @@ public class GrowAbility : MonoBehaviour
                 else
                 {
                     //$Player Grow Overcharge
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Overgrowing");
+                    FMODUnity.RuntimeManager.PlayOneShot(growingEvent, transform.position);
                 }
             }
             else
