@@ -663,10 +663,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 110150816
-      Data2: 1304653965
-      Data3: 821359770
-      Data4: -1296609424
+      Data1: 2108554004
+      Data2: 1295729485
+      Data3: -1705883242
+      Data4: -1235380483
     Path: event:/Sound Effects/Machine Sounds/Machine_Trapped
   Event: 
   EventPlayTrigger: 0
@@ -678,7 +678,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 25
 --- !u!1 &2809352778195952122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,10 +4921,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1678806847
-      Data2: 1105206792
-      Data3: -1230447953
-      Data4: 1996637430
+      Data1: -1046008781
+      Data2: 1162740333
+      Data3: 1980222367
+      Data4: -1331188678
     Path: event:/Sound Effects/Machine Sounds/Machine_Working
   Event: 
   EventPlayTrigger: 0
@@ -4936,7 +4936,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 40
 --- !u!1 &8861473168060662879
 GameObject:
   m_ObjectHideFlags: 0

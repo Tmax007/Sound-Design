@@ -53,7 +53,7 @@
 			<destination>{a5e4c35d-4ac3-466a-a862-02efb5541a1e}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b54e1426-0597-4566-8b9e-a524ba4ff3ce}</destination>
+			<destination>{0d42afe0-446f-463d-a278-9226384699c7}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{3c0ef299-05f8-4e3b-a5ae-81a87a1ab202}" />
@@ -97,9 +97,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0880881c-8f9a-4949-94de-4e4efd69100a}">
-		<property name="volume">
-			<value>-6</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

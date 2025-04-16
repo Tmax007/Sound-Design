@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{41dd023b-5163-4a60-ae9d-946785425370}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
+		<property name="name">
+			<value>Lida</value>
+		</property>
+		<property name="pitch">
+			<value>1</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{f942357f-4023-4318-9159-e6c8e3d34b93}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{c5bf0946-a081-459d-9994-2bd052234688}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a8cec985-188e-4931-a4bf-7263197b06a5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{f942357f-4023-4318-9159-e6c8e3d34b93}">
+		<relationship name="effects">
+			<destination>{f9d823c0-aaa7-4dde-a9cf-92220e2bde8d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{c5bf0946-a081-459d-9994-2bd052234688}" />
+	<object class="MixerBusFader" id="{f9d823c0-aaa7-4dde-a9cf-92220e2bde8d}" />
+</objects>

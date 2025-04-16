@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{e892c52f-6c38-4090-af02-ab2774656eaf}">
+		<property name="name">
+			<value>Poison Gas</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{7d6725e6-ddd4-48ac-a3c8-6760ac7792f3}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{3881e8ef-d4ec-481c-a505-eb6430ba1792}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{2d915eda-e8bd-4ba0-a499-33c1f67545d7}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{7d6725e6-ddd4-48ac-a3c8-6760ac7792f3}">
+		<relationship name="effects">
+			<destination>{6a447aa1-ce59-4dd8-8e2a-9983741366fb}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{3881e8ef-d4ec-481c-a505-eb6430ba1792}" />
+	<object class="MixerBusFader" id="{6a447aa1-ce59-4dd8-8e2a-9983741366fb}" />
+</objects>

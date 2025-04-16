@@ -53,7 +53,7 @@
 			<destination>{608d2dcb-5113-4b09-8ac2-33d5425b89e7}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b54e1426-0597-4566-8b9e-a524ba4ff3ce}</destination>
+			<destination>{41dd023b-5163-4a60-ae9d-946785425370}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{9292623c-f717-4167-a07b-61ec86466b73}" />
@@ -92,17 +92,11 @@
 		<property name="length">
 			<value>4.5</value>
 		</property>
-		<property name="pitch">
-			<value>1</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{7cd52da2-3eae-462f-a75b-52e677920633}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d1ded50d-a1a3-4fa3-8169-aa9ad1f1cecb}">
-		<property name="volume">
-			<value>-2.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
