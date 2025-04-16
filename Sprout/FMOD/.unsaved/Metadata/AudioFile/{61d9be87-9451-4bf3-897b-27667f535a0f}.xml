@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{9d68ccfe-fbad-48c3-8736-3d74c97d98f8}">
-		<property name="assetPath">
-			<value>cartoon_electronic_computer_code_04.wav</value>
-		</property>
+	<object class="AudioFile" id="{61d9be87-9451-4bf3-897b-27667f535a0f}">
+		<property name="assetPath" />
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
@@ -11,7 +9,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.41345833333333332</value>
+			<value>1.0105416666666667</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{5a63a1c9-4808-4ce5-a49f-a6aa74e4745e}</destination>

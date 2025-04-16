@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{5bde2364-e8d1-471e-93b5-bd555de9be42}">
-		<property name="assetPath">
-			<value>ambience_bugs_1.wav</value>
+	<object class="AudioFile" id="{1115a81c-bf55-45a4-a985-6fb07a2530d1}">
+		<property name="assetPath" />
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +12,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.8728117913832198</value>
+			<value>23.165419501133787</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{5a63a1c9-4808-4ce5-a49f-a6aa74e4745e}</destination>
