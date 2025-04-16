@@ -2123,7 +2123,7 @@ MonoBehaviour:
       Data2: 1183910789
       Data3: 1992837530
       Data4: -763802754
-    Path: event:/UI/Button Click
+    Path: event:/UI/Menu_Button_Click
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -2154,7 +2154,7 @@ MonoBehaviour:
       Data2: 1333866651
       Data3: 1880350356
       Data4: 19750479
-    Path: event:/UI/Button Select
+    Path: event:/UI/Menu_Button_Select
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0

@@ -181,7 +181,7 @@ MonoBehaviour:
       Data2: 1200199528
       Data3: -1341657667
       Data4: 1372793689
-    Path: event:/Ambience/Machine Area
+    Path: event:/Ambience/Machine
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
       Data2: 1149171078
       Data3: 1681795745
       Data4: 1306806651
-    Path: event:/Ambience/Area Ambience
+    Path: event:/Ambience/Area
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -361,7 +361,7 @@ MonoBehaviour:
       Data2: 1244630186
       Data3: 369338552
       Data4: 1475721741
-    Path: event:/Music/Menu
+    Path: event:/Music/Main_Menu
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
       Data2: 1235266858
       Data3: 64546183
       Data4: 1941630054
-    Path: event:/Music/Starting Area
+    Path: event:/Music/Spawn_Area
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
       Data2: 1181696605
       Data3: -1757800812
       Data4: -1018354598
-    Path: event:/Music/Flower Puzzle
+    Path: event:/Music/Forest Area/Flower_Puzzle
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -454,7 +454,7 @@ MonoBehaviour:
       Data2: 1282259980
       Data3: -799550298
       Data4: 1303443062
-    Path: event:/Music/Forest Grove Area
+    Path: event:/Music/Forest Area/Forest _Grove
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
       Data2: 1116139533
       Data3: 901060287
       Data4: 1243593306
-    Path: event:/Music/Forest NPCs
+    Path: event:/Music/Forest Area/Forest_NPC
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
       Data2: 1078492532
       Data3: 430812310
       Data4: -1744597600
-    Path: event:/Music/Corrupted Area
+    Path: event:/Music/Corrupted Area/Corrupted_Area_1
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
       Data2: 1103052214
       Data3: -4749168
       Data4: -179011095
-    Path: event:/Music/Mushroom Grove
+    Path: event:/Music/Mushroom Area/Mushroom_Grove
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -578,7 +578,7 @@ MonoBehaviour:
       Data2: 1133414754
       Data3: -507074889
       Data4: 2108316705
-    Path: event:/Music/Mushroom NPCs
+    Path: event:/Music/Mushroom Area/Mushroom_NPC
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
       Data2: 1264169352
       Data3: 1865495959
       Data4: 1567183002
-    Path: event:/Music/Machine Puzzle
+    Path: event:/Music/Machine_Puzzle
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -640,7 +640,7 @@ MonoBehaviour:
       Data2: 1102327012
       Data3: -1211128684
       Data4: -1808339346
-    Path: event:/Music/Corrupted Area 2
+    Path: event:/Music/Corrupted Area/Corrupted_Area_2
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
