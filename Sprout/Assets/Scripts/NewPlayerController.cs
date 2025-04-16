@@ -71,21 +71,22 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
     private Material sproutMaterial;
 
-    [Header("FMOD")]
-    [EventRef] public string walkingSFXEventPath;
-    private FMOD.Studio.EventInstance walkingSFXInstance;
-    private FMOD.Studio.EventInstance realingSFX;
+    [Header("FMOD Events")]
+    [EventRef] public string walkingEvent = "event:/Sound Effects/Player Sounds/Player_Walking";
+    [EventRef] public string plantingEvent = "event:/Sound Effects/Player Sounds/Player_Planting";
+    [EventRef] public string recallingEvent = "event:/Sound Effects/Player Sounds/Player_Recalling";
+    [EventRef] public string interactingEvent = "event:/Sound Effects/Player Sounds/Player_Interacting";
+    [EventRef] public string throwingEvent = "event:/Sound Effects/Player Sounds/Player_Throwing";
+    [EventRef] public string pickingUpEvent = "event:/Sound Effects/Player Sounds/Player_Picking_Up";
+    [EventRef] public string bouncingEvent = "event:/Sound Effects/Player Sounds/Player_Bouncing";
+
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        realingSFX = RuntimeManager.CreateInstance("event:/Sound Effects/Player Sounds/Player Planting");
 
         sproutMaterial = spriteQuad.gameObject.GetComponent<MeshRenderer>().material;
-
-        // Create the FMOD footstep sound instance
-        //walkingSFXInstance = RuntimeManager.CreateInstance(walkingSFXEventPath);
     }
 
     void Update()
@@ -148,33 +149,27 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // Normalize input to prevent faster diagonal movement
         if (movement != Vector2.zero)
         {
             facingDirection = new Vector3(movement.x, 0f, movement.y).normalized;
 
-            // Start feedback only if it's not already playing
             if (!WalkingFeedback.IsPlaying)
             {
                 WalkingFeedback.PlayFeedbacks();
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Walking");
+                RuntimeManager.PlayOneShot(walkingEvent, transform.position);
             }
 
             isWalking = true;
         }
         else if (isWalking)
         {
-            // Stop feedback when player stops moving
             WalkingFeedback?.StopFeedbacks();
             isWalking = false;
         }
     }
 
-    // Move the player
     void MoveCharacter()
     {
-        //$Player Walking
-
         if (movement == Vector2.zero)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
@@ -184,11 +179,10 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             Vector2 normalizedMovement = movement.normalized;
             rb.linearVelocity = new Vector3(normalizedMovement.x * moveSpeed, rb.linearVelocity.y, normalizedMovement.y * moveSpeed);
 
-            // Play walking feedback only when movement input is detected
             if (WalkingFeedback != null && !WalkingFeedback.IsPlaying)
             {
                 WalkingFeedback.PlayFeedbacks();
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Walking");
+                RuntimeManager.PlayOneShot(walkingEvent, transform.position);
             }
         }
     }
@@ -228,25 +222,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
                     if ((Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.J)) && hasUnlockedVineSeed)
                     {
-                        //$Player Planting for vine seed
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Planting");
+                        RuntimeManager.PlayOneShot(plantingEvent, transform.position);
 
-                        seed = Instantiate(seedPrefab, throwPoint.position, Quaternion.identity) as GameObject;
-
-                        // Instantiate seed at throw point
-
+                        seed = Instantiate(seedPrefab, throwPoint.position, Quaternion.identity);
                         uiManager.AssignSeedIcon(seed.GetComponent<GrowableSproutBaseClass>());
-
-                        // Set seed's layer to "Seed"
                         seed.layer = LayerMask.NameToLayer("Seed");
-
-                        Rigidbody seedRb = seed.GetComponent<Rigidbody>();
-
-                        // Calculate throw direction and apply velocity
-                        Vector2 throwDirection = facingDirection.normalized * throwForce;
-                        float upwardForce = arcHeight; // Add upward arc. Not necessary maybe
-                                                       //seedRb.linearVelocity = new Vector2(throwDirection.x, throwDirection.y + upwardForce);
-
                         plantedSeed.Add(seed.GetComponent<GrowableSproutBaseClass>());
 
                         if (snapSeedToGrid)
@@ -256,25 +236,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                     }
                     else if (hasUnlockedBouncyPadSeed)
                     {
-                        //$Player Planting for bouncy seed
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Planting");
-                        //RecallingFeedback.PlayFeedbacks();
-                        seed = Instantiate(bouncyPadSeedPrefab, throwPoint.position, Quaternion.identity) as GameObject;
+                        RuntimeManager.PlayOneShot(plantingEvent, transform.position);
 
-                        // Instantiate seed at throw point
-
+                        seed = Instantiate(bouncyPadSeedPrefab, throwPoint.position, Quaternion.identity);
                         uiManager.AssignSeedIcon(seed.GetComponent<GrowableSproutBaseClass>());
-
-                        // Set seed's layer to "Seed"
                         seed.layer = LayerMask.NameToLayer("Seed");
-
-                        Rigidbody seedRb = seed.GetComponent<Rigidbody>();
-
-                        // Calculate throw direction and apply velocity
-                        Vector2 throwDirection = facingDirection.normalized * throwForce;
-                        float upwardForce = arcHeight; // Add upward arc. Not necessary maybe
-                                                       //seedRb.linearVelocity = new Vector2(throwDirection.x, throwDirection.y + upwardForce);
-
                         plantedSeed.Add(seed.GetComponent<GrowableSproutBaseClass>());
 
                         if (snapSeedToGrid)
@@ -292,24 +258,19 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
             if (vineButtonHeldDownTimer > 1f)
             {
-                //$Player Realling Vine Seed
                 if (plantedSeed.Count > 0)
                 {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Recalling");
+                    RuntimeManager.PlayOneShot(recallingEvent, transform.position);
                     RecallingFeedback.PlayFeedbacks();
                 }
-                //realingSFX.start();
+
                 foreach (var seed in plantedSeed.ToList())
                 {
-                    if (seed != null)
+                    if (seed != null && seed.transform.GetComponent<VineSeed>() != null)
                     {
-                        if (seed.transform.GetComponent<VineSeed>() != null)
-                        {
-                            seed.GrowSprout(5f, new Vector2(facingDirection.x, facingDirection.z));
-                            seed.transform.GetComponentInChildren<VinePlant>().UnGrow();
-                            plantedSeed.Remove(seed);
-                        }
-
+                        seed.GrowSprout(5f, new Vector2(facingDirection.x, facingDirection.z));
+                        seed.transform.GetComponentInChildren<VinePlant>().UnGrow();
+                        plantedSeed.Remove(seed);
                     }
                 }
             }
@@ -323,25 +284,17 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
             {
                 if (plantedSeed.Count > 0)
                 {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Recalling");
+                    RuntimeManager.PlayOneShot(recallingEvent, transform.position);
                     RecallingFeedback.PlayFeedbacks();
                 }
-                //$Player Realling Bouncy Seed
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Recalling");
-                //realingSFX.start();
-                //RecallingFeedback.PlayFeedbacks();
 
                 foreach (var seed in plantedSeed.ToList())
                 {
-                    if (seed != null)
+                    if (seed != null && seed.transform.GetComponent<BouncyPadSeed>() != null)
                     {
-                        if (seed.transform.GetComponent<BouncyPadSeed>() != null)
-                        {
-                            seed.GrowSprout(5f, new Vector2(facingDirection.x, facingDirection.z));
-                            seed.transform.GetComponentInChildren<BouncyPadPlant>().Ungrow();
-                            plantedSeed.Remove(seed);
-                        }
-
+                        seed.GrowSprout(5f, new Vector2(facingDirection.x, facingDirection.z));
+                        seed.transform.GetComponentInChildren<BouncyPadPlant>().Ungrow();
+                        plantedSeed.Remove(seed);
                     }
                 }
             }
@@ -356,7 +309,6 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         {
             bouncyPadButtonHeldDownTimer = 0f;
         }
-
     }
 
     // Handle player interaction (e.g., picking up items, activating objects)
@@ -366,15 +318,12 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         {
             if (Input.GetKey(KeyCode.E))
             {
-                //TODO: make raycast every 0.1 seconds instead of every frame
                 RaycastHit hit;
-
                 GameObject hitObject;
 
-                //check if ray hits
                 bool didHit = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), facingDirection, out hit, 1f);
 
-                if (didHit && (hit.transform.gameObject.GetComponent<IInteractable>() != null || hit.transform.gameObject.GetComponent<ThrowableBaseClass>()))
+                if (didHit && (hit.transform.gameObject.GetComponent<IInteractable>() != null || hit.transform.gameObject.GetComponent<ThrowableBaseClass>() != null))
                 {
                     hitObject = hit.transform.gameObject;
                 }
@@ -383,40 +332,25 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
                     didHit = IsInteractableOverlap(out hitObject);
                 }
 
-                //shoot raycast towards the facing direction, getting IInteractable interface from the object hit
                 if (hitObject != null && hitObject.GetComponent<IInteractable>() != null)
                 {
-                    //$Player Interact
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Interacting");
-
-                    //store object currently interacted wtih
+                    RuntimeManager.PlayOneShot(interactingEvent, transform.position);
                     currentIntractedObject = hitObject;
-
-                    //call OnStartInteract function from IInteractable interface
                     hitObject.GetComponent<IInteractable>().OnStartInteract();
-                    //InteractingFeedback.PlayFeedbacks();
                 }
                 else if (hitObject != null && hitObject.GetComponent<ThrowableBaseClass>() != null)
                 {
-                    //$Picking Up
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Picking Up");
+                    RuntimeManager.PlayOneShot(pickingUpEvent, transform.position);
                     currentItemBeingCarried = hitObject.GetComponent<ThrowableBaseClass>();
-
                     currentItemBeingCarried.PickUp(objectThrowPoint);
                 }
-                else
+                else if (currentIntractedObject != null)
                 {
-                    //if raycast didn't hit anything
-                    if (currentIntractedObject != null)
-                    {
-                        //call OnStopInteraction function from IInteractable interface
-                        currentIntractedObject.GetComponent<IInteractable>().OnStopInteract();
-                        currentIntractedObject = null;
-                    }
+                    currentIntractedObject.GetComponent<IInteractable>().OnStopInteract();
+                    currentIntractedObject = null;
                 }
             }
 
-            //if the interact key was let go
             if (Input.GetKeyUp(KeyCode.E))
             {
                 if (currentIntractedObject != null)
@@ -430,24 +364,11 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //$Player Throwing
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Throwing");
+                RuntimeManager.PlayOneShot(throwingEvent, transform.position);
                 currentItemBeingCarried.Throw(new Vector2(facingDirection.x, facingDirection.z));
                 currentItemBeingCarried = null;
-
-                //if(movement.magnitude > 0)
-                //{
-                //    currentItemBeingCarried.Throw(new Vector2(facingDirection.x, facingDirection.z));
-                //    currentItemBeingCarried = null;
-                //}
-                //else
-                //{
-                //    currentItemBeingCarried.Drop();
-                //    currentItemBeingCarried = null;
-                //}
             }
         }
-
     }
 
     private bool IsInteractableOverlap(out GameObject interactable)
@@ -618,15 +539,14 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
     {
         yield return new WaitForSeconds(duration);
 
-        //$Player Bounce
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Player Sounds/Player Bouncing");
-        Debug.Log("Delay");
+        // $Player Bouncing
+        RuntimeManager.PlayOneShot(bouncingEvent, transform.position);
+
         hasBeenLaunched = true;
         rb.linearVelocity = new Vector3(direction.x * distance, height, direction.y * distance);
         canOverrideLaunch = false;
         launchGravity = height * 2;
         gameObject.GetComponent<CapsuleCollider>().isTrigger = false;
-        Debug.Log(launchGravity);
     }
 
     private void HandleBouncyPadGravity()
