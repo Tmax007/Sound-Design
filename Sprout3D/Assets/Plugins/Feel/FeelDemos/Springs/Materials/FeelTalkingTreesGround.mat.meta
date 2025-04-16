@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9e6271d9e518a54191505e713ad29ab
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234145
+  packageName: Feel + Text Animator + Dialogue System Bundle Demo Scene
+  packageVersion: 1.1.0
+  assetPath: Assets/Plugins/Feel/FeelDemos/Springs/Materials/FeelTalkingTreesGround.mat
+  uploadId: 601333

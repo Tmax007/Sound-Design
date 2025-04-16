@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{44a07806-9da4-4fd2-9bc4-264e6c73487e}">
+		<property name="assetPath">
+			<value>Flower Door Open.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.83225000000000005</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a63a1c9-4808-4ce5-a49f-a6aa74e4745e}</destination>
+		</relationship>
+	</object>
+</objects>

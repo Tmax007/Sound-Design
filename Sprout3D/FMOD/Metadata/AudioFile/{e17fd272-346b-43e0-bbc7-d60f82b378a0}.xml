@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e17fd272-346b-43e0-bbc7-d60f82b378a0}">
+		<property name="assetPath">
+			<value>Room_ambience_5.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>23.165419501133787</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a63a1c9-4808-4ce5-a49f-a6aa74e4745e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 278b5182e07f937459e58c67f3cbb60c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234145
+  packageName: Feel + Text Animator + Dialogue System Bundle Demo Scene
+  packageVersion: 1.1.0
+  assetPath: Assets/BundleDemos/TalkingTrees/TalkingTrees.unity
+  uploadId: 601333

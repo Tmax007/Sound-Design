@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d8ceb2ab5029cfc4db1e23a558bad991
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234145
+  packageName: Feel + Text Animator + Dialogue System Bundle Demo Scene
+  packageVersion: 1.1.0
+  assetPath: Assets/Plugins/Feel/FeelDemos/Springs/Materials/FeelTalkingTreesSkybox.mat
+  uploadId: 601333

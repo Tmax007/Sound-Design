@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6b38e238e1492ac4d98dc56d20b399a2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234145
+  packageName: Feel + Text Animator + Dialogue System Bundle Demo Scene
+  packageVersion: 1.1.0
+  assetPath: Assets/Plugins/Feel/FeelDemos/Springs/Materials/FeelTalkingTreesPineLeaves.mat
+  uploadId: 601333

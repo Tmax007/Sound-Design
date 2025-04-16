@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 452147fbe4364494da2a6223be723a6d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234145
+  packageName: Feel + Text Animator + Dialogue System Bundle Demo Scene
+  packageVersion: 1.1.0
+  assetPath: Assets/BundleDemos/TalkingTrees/SpeechBubble/TextAnimatorBubbleMenuPanel.prefab
+  uploadId: 601333

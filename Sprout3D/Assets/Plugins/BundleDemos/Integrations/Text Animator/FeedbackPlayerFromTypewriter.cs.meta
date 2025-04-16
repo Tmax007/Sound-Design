@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 786518992796a66488c9e6e4ef7771e0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234145
+  packageName: Feel + Text Animator + Dialogue System Bundle Demo Scene
+  packageVersion: 1.1.0
+  assetPath: Assets/BundleDemos/Integrations/Text Animator/FeedbackPlayerFromTypewriter.cs
+  uploadId: 601333
