@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{67fef60a-7d74-4048-96ac-ad19a08d0398}">
 		<property name="name">
-			<value>Corrupted Area</value>
+			<value>Corrupted_Area_1</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{5003299d-0624-4c30-9a60-7004a2c4f42a}</destination>
+			<destination>{bdc73421-384c-4a89-84aa-3a06fb65b13b}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{b0f08996-3d07-47b1-8ee8-fd2379f335fd}</destination>
@@ -67,7 +67,7 @@
 	<object class="MarkerTrack" id="{1b5e1f69-0335-4cf1-8311-37f83f05729b}" />
 	<object class="GroupTrack" id="{28604a81-5cf6-43e4-b193-4869debdbb77}">
 		<relationship name="modules">
-			<destination>{76ab3a16-d65b-4246-bca0-2b5fefaaf1a8}</destination>
+			<destination>{7ceacc74-108c-416c-b47a-e94460a77866}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{05dad5af-46e0-485a-a79f-ed7c820ae408}</destination>
@@ -75,7 +75,7 @@
 	</object>
 	<object class="Timeline" id="{b95253a9-4476-4c27-b901-dbd3fa122eb3}">
 		<relationship name="modules">
-			<destination>{76ab3a16-d65b-4246-bca0-2b5fefaaf1a8}</destination>
+			<destination>{7ceacc74-108c-416c-b47a-e94460a77866}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{a4e370be-c750-4876-a4ff-2e30d65aed2e}</destination>
@@ -101,12 +101,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{07a43965-4bbb-4a2b-a909-2b58b0d2ac1e}" />
-	<object class="SingleSound" id="{76ab3a16-d65b-4246-bca0-2b5fefaaf1a8}">
+	<object class="SingleSound" id="{7ceacc74-108c-416c-b47a-e94460a77866}">
 		<property name="length">
 			<value>48.433628117913834</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{8449e93c-63d1-4b5f-9924-f6ddd664c78e}</destination>
+			<destination>{72204875-ad7d-49cc-b72d-fa0b35941660}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{05dad5af-46e0-485a-a79f-ed7c820ae408}">

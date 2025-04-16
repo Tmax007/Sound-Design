@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{d9f50158-5c42-40e1-9c3c-e2c804984569}">
 		<property name="name">
-			<value>Continue Button</value>
+			<value>Continue_Button_Click</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{b832fc76-ab38-4da6-83ae-e9c76f6e9254}" />
 	<object class="GroupTrack" id="{1f963f0f-a984-425f-9e57-070823bbe8fc}">
 		<relationship name="modules">
-			<destination>{66e7b555-a638-47f4-ae6e-46bd1295e6bd}</destination>
+			<destination>{8914b74e-ac45-40a5-b8c2-566a3619b1d5}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{801415c8-6c54-4a17-bfb6-6eba7ad0f936}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{24a4e3dc-f4ad-4d78-bae6-e645bf64bca4}">
 		<relationship name="modules">
-			<destination>{66e7b555-a638-47f4-ae6e-46bd1295e6bd}</destination>
+			<destination>{8914b74e-ac45-40a5-b8c2-566a3619b1d5}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{41acfd8a-ee55-486d-b6fa-fe6261e00fdb}">
@@ -88,12 +88,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4a73da2b-87b3-4a95-9739-3f3bc81cad26}" />
-	<object class="SingleSound" id="{66e7b555-a638-47f4-ae6e-46bd1295e6bd}">
+	<object class="SingleSound" id="{8914b74e-ac45-40a5-b8c2-566a3619b1d5}">
 		<property name="length">
 			<value>1.0292291666666666</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{092e34ce-9531-4802-ac15-e542cbcd7685}</destination>
+			<destination>{e546a3b0-bf16-4113-8402-6a06e35e4991}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{801415c8-6c54-4a17-bfb6-6eba7ad0f936}">

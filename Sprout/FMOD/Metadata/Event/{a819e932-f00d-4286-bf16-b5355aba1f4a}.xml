@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a819e932-f00d-4286-bf16-b5355aba1f4a}">
 		<property name="name">
-			<value>Forest NPCs</value>
+			<value>Forest_NPC</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{5003299d-0624-4c30-9a60-7004a2c4f42a}</destination>
+			<destination>{7dd0e3dd-185a-4f41-bf0f-51649c112e7f}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{e856b4cb-1d78-42da-8749-8afebd83b245}</destination>
@@ -67,7 +67,7 @@
 	<object class="MarkerTrack" id="{3d3d0632-e0c6-4ccc-ba6c-16938918b6ab}" />
 	<object class="GroupTrack" id="{7d26d320-efad-4b4f-abb2-aebcdcba9f10}">
 		<relationship name="modules">
-			<destination>{93f53614-b659-431c-91b3-4994fc5c9fa8}</destination>
+			<destination>{230f8827-6cbc-4557-b24a-515d40ac01c4}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{183fb0dc-b5e9-4e95-9c70-d37345ab255d}</destination>
@@ -75,7 +75,7 @@
 	</object>
 	<object class="Timeline" id="{17078ad7-7ad3-415e-82e0-c6b8021937cf}">
 		<relationship name="modules">
-			<destination>{93f53614-b659-431c-91b3-4994fc5c9fa8}</destination>
+			<destination>{230f8827-6cbc-4557-b24a-515d40ac01c4}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{4ef798be-4f4a-454e-95eb-ff0e17a728d3}</destination>
@@ -101,12 +101,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f8a4b358-54a0-47f3-aea8-e39de9d4861c}" />
-	<object class="SingleSound" id="{93f53614-b659-431c-91b3-4994fc5c9fa8}">
+	<object class="SingleSound" id="{230f8827-6cbc-4557-b24a-515d40ac01c4}">
 		<property name="length">
 			<value>108</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{4614ffa1-e87b-45ff-b50f-dbdba03c80cc}</destination>
+			<destination>{6da679fa-432e-4802-9b6c-710983f02c87}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{183fb0dc-b5e9-4e95-9c70-d37345ab255d}">

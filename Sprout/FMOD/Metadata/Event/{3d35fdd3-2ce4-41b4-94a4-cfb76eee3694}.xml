@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3d35fdd3-2ce4-41b4-94a4-cfb76eee3694}">
 		<property name="name">
-			<value>Corrupted Area 2</value>
+			<value>Corrupted_Area_2</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{5003299d-0624-4c30-9a60-7004a2c4f42a}</destination>
+			<destination>{bdc73421-384c-4a89-84aa-3a06fb65b13b}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{811f4943-f506-4cdf-94fa-a1ffdc5fc0ae}</destination>
@@ -67,7 +67,7 @@
 	<object class="MarkerTrack" id="{3a8d3e73-41ce-4076-a16f-809c8e45c6b3}" />
 	<object class="GroupTrack" id="{6a38795a-16bc-48fa-b6bf-245c7b795647}">
 		<relationship name="modules">
-			<destination>{832784b2-b13b-49d9-a961-df1f320bb18f}</destination>
+			<destination>{e39f5ad9-db36-4ed5-9a75-a3b41b16122b}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{30bfb220-e999-4b78-af9d-6e67fe7cb712}</destination>
@@ -75,7 +75,7 @@
 	</object>
 	<object class="Timeline" id="{257ce1c1-7fe1-4c3a-a924-7a1c61650d78}">
 		<relationship name="modules">
-			<destination>{832784b2-b13b-49d9-a961-df1f320bb18f}</destination>
+			<destination>{e39f5ad9-db36-4ed5-9a75-a3b41b16122b}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{607f4f6b-a51b-4049-ac8d-437beb0c6a85}</destination>
@@ -101,12 +101,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{086711c8-cb43-43d4-a41c-deaa91c82e05}" />
-	<object class="SingleSound" id="{832784b2-b13b-49d9-a961-df1f320bb18f}">
+	<object class="SingleSound" id="{e39f5ad9-db36-4ed5-9a75-a3b41b16122b}">
 		<property name="length">
 			<value>112</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{f948b453-50d4-4fe5-9f0d-9ce66d5fd901}</destination>
+			<destination>{17c2be7e-4520-46fa-99b1-8446aac25359}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{30bfb220-e999-4b78-af9d-6e67fe7cb712}">
