@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{9ed39994-d7e7-4f7e-8fea-f1fb6f6d4ab2}">
+		<property name="name">
+			<value>MusicState</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e2adfddb-7935-440f-a4e3-ac0b0ea33c81}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f2ec1080-5d77-47bb-90be-053c124285d6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f2ec1080-5d77-47bb-90be-053c124285d6}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>9</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Spawn_Area</value>
+			<value>Flower_Puzzle</value>
+			<value>Forest_NPC</value>
+			<value>Forest_Grove</value>
+			<value>Mushroom_Grove</value>
+			<value>Mushroom_NPC</value>
+			<value>Corrupted_Area_1</value>
+			<value>Corrupted_Area_2</value>
+			<value>Machine_Puzzle</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
