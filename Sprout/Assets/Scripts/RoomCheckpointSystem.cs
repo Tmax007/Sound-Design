@@ -3,14 +3,13 @@ using FMODUnity;
 using FMOD.Studio;
 public class RoomCheckpointSystem : MonoBehaviour
 {
-    [Header("Checkpoint (Optional)")]
     public Transform respawnPoint;
 
-    [Header("FMOD Music State (Label Name)")]
-    public string musicStateLabel;
+    [Header("FMOD Triggered Music (Optional)")]
+    [EventRef] public string musicToPlay;
 
-    [Header("FMOD Ambience State (Label Name)")]
-    public string ambienceStateLabel;
+    [Header("FMOD Triggered Ambience (Optional)")]
+    [EventRef] public string ambienceToPlay;
 
     private bool hasTriggered = false;
 
@@ -20,25 +19,13 @@ public class RoomCheckpointSystem : MonoBehaviour
 
         hasTriggered = true;
 
-        // Set checkpoint (optional)
-        if (respawnPoint != null)
+        CameraController cam = FindObjectOfType<CameraController>();
+        if (cam != null)
         {
-            CameraController cam = FindObjectOfType<CameraController>();
-            if (cam != null)
-            {
-                cam.SetCheckpoint(respawnPoint);
-            }
+            cam.SetCheckpoint(respawnPoint);
         }
 
-        // Set Music and Ambience states
-        if (!string.IsNullOrEmpty(musicStateLabel))
-        {
-            AudioManager.Instance?.SetMusicState(musicStateLabel);
-        }
-
-        if (!string.IsNullOrEmpty(ambienceStateLabel))
-        {
-            AudioManager.Instance?.SetAmbienceState(ambienceStateLabel);
-        }
+        AudioManager.Instance?.PlayMusic(musicToPlay);
+        AudioManager.Instance?.PlayAmbience(ambienceToPlay);
     }
 }
