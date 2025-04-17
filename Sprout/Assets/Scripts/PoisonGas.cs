@@ -1,116 +1,105 @@
+﻿using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
 public class PoisonGas : MonoBehaviour
 {
+    [Header("Dissipation settings")]
     public float timeToSubside = 0.5f;
-    public float subsidePrograss = 0f;
     public Vector3 subsideDirection = Vector3.down;
     public float subsideDistance = 3f;
-    private Vector3 startingPosition;
-    private Vector3 subsidePosition;
-    public Transform poisonGasses;
-    public BoxCollider poisonArea;
-    public bool currentlyBlown = false;
-    public bool gasIsActve = true;
 
-    private FMOD.Studio.EventInstance gasActiveSound;
+    [Header("Scene references")]
+    public Transform poisonGasses;          // parent containing the VFX
+    public BoxCollider poisonArea;          // automatically fetched in Start()
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Runtime info (read‑only)")]
+    public bool currentlyBlown = false;     // set by WindTurbine
+    public bool gasIsActive = true;      // true while the cloud hurts the player
+
+    // -----------------------------------------------------------------------
+    // ‑‑ private fields
+    // -----------------------------------------------------------------------
+    float subsideProgress;
+    Vector3 startPos;
+    Vector3 targetPos;
+
+    EventInstance gasLoopInstance;
+    bool hasFiredDisappearSFX = false;      // ensures single one‑shot
+
+    // -----------------------------------------------------------------------
+    // unity flow
+    // -----------------------------------------------------------------------
     void Start()
     {
-        gasActiveSound = RuntimeManager.CreateInstance("event:/Sound Effects/Poison Gas");
-        gasActiveSound.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
-        gasActiveSound.start();
-
-        //$Poison Gas
         poisonArea = GetComponent<BoxCollider>();
-        startingPosition = poisonGasses.position;
-        subsidePosition = poisonGasses.position + subsideDirection * subsideDistance;
+        startPos = poisonGasses.position;
+        targetPos = startPos + subsideDirection * subsideDistance;
+
+        // create and start the looping gas bed
+        gasLoopInstance = RuntimeManager.CreateInstance("event:/Sound Effects/Poison Gas/Poison_Gas");
+        gasLoopInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+        gasLoopInstance.start();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(currentlyBlown)
+        // --------------------------------------------------------------
+        // update subside progress (0 = full cloud, 1 = disappeared)
+        // --------------------------------------------------------------
+        if (currentlyBlown)
+            subsideProgress += Time.deltaTime / timeToSubside;
+        else
+            subsideProgress -= Time.deltaTime / timeToSubside;
+
+        subsideProgress = Mathf.Clamp01(subsideProgress);
+
+        // --------------------------------------------------------------
+        // state switches
+        // --------------------------------------------------------------
+        if (subsideProgress >= 1f)
         {
-            subsidePrograss += Time.deltaTime/timeToSubside;
+            poisonGasses.gameObject.SetActive(false);
+            gasIsActive = false;
         }
         else
         {
-            subsidePrograss -= Time.deltaTime/timeToSubside;
-
-            if(!poisonGasses.gameObject.activeSelf)
-            {
-                //$Poison Gas
+            gasIsActive = true;
+            if (!poisonGasses.gameObject.activeSelf)
                 poisonGasses.gameObject.SetActive(true);
-            }
         }
 
-        subsidePrograss = Mathf.Clamp01(subsidePrograss);
+        // --------------------------------------------------------------
+        // move the VFX
+        // --------------------------------------------------------------
+        poisonGasses.position = Vector3.Lerp(startPos, targetPos, subsideProgress);
 
-        if (subsidePrograss >= 1)
+        // --------------------------------------------------------------
+        // audio transitions
+        // --------------------------------------------------------------
+        if (currentlyBlown && !hasFiredDisappearSFX)
         {
-            poisonGasses.gameObject.SetActive(false);
-            gasIsActve = false;
+            // first frame of being blown → stop loop & fire one‑shot
+            gasLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.PlayOneShot("event:/Sound Effects/Poison Gas/Poison_Gas_Disappearing", transform.position);
+            hasFiredDisappearSFX = true;
         }
-        if (subsidePrograss <= 0.1)
+        else if (!currentlyBlown && hasFiredDisappearSFX)
         {
-            gasIsActve = true;
-        }
-
-        poisonGasses.position = Vector3.Lerp(startingPosition, subsidePosition, subsidePrograss/timeToSubside);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //if(other.gameObject.GetComponent<WindTurbine>() != null)
-        //{
-        //    currentlyBlown = true;
-        //}
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.GetComponent<WindTurbine>() != null)
-        {
-            if(other.gameObject.GetComponent<WindTurbine>().isActivated)
-            {
-
-                //$Poison Gas Dissapearing
-                if (!currentlyBlown)
-                {
-                    gasActiveSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Poison Gas Disappearing");
-                }
-
-                currentlyBlown = true;
-            }
-            else
-            {
-                if(currentlyBlown)
-                {
-                    gasActiveSound.start();
-                }
-                currentlyBlown = false;  
-            }
+            // wind stopped → restart loop and allow another future one‑shot
+            gasLoopInstance.start();
+            hasFiredDisappearSFX = false;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        //Debug.Log("Extit");
-        //if (other.gameObject.GetComponent<WindTurbine>() != null)
-        //{
-        //    currentlyBlown = false;
-        //}
-    }
-
+    // -----------------------------------------------------------------------
+    // called from WindTurbine
+    // -----------------------------------------------------------------------
     public void StartBlowing(Vector3 direction)
     {
         currentlyBlown = true;
-
-        direction = Vector3.Normalize(direction);
+        subsideDirection = direction.normalized;
+        targetPos = startPos + subsideDirection * subsideDistance;
     }
 
     public void StopBlowing()
@@ -118,9 +107,15 @@ public class PoisonGas : MonoBehaviour
         currentlyBlown = false;
     }
 
-    public void ChangeSubsideDirection(Vector3 direction)
+    // -----------------------------------------------------------------------
+    // clean‑up
+    // -----------------------------------------------------------------------
+    void OnDestroy()
     {
-        subsideDirection = direction;
-        subsidePosition = poisonGasses.position + subsideDirection * subsideDistance;
+        if (gasLoopInstance.isValid())
+        {
+            gasLoopInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            gasLoopInstance.release();
+        }
     }
 }

@@ -79,10 +79,11 @@ public class WindTurbine : MonoBehaviour, IActivatable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PoisonGas>() != null)
+        PoisonGas gas = other.GetComponent<PoisonGas>();
+        if (gas != null)
         {
-            other.gameObject.GetComponent<PoisonGas>().StartBlowing(transform.forward);
-            other.gameObject.GetComponent<PoisonGas>().ChangeSubsideDirection(blowDirection);
+            Vector3 blowDirection = transform.forward;   // or whatever direction you need
+            gas.StartBlowing(blowDirection);
         }
     }
 

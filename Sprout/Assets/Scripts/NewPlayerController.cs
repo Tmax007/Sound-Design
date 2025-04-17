@@ -499,16 +499,10 @@ public class NewPlayerController : MonoBehaviour, ILaunchable
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<PoisonGas>())
+        PoisonGas gas = other.GetComponent<PoisonGas>();
+        if (gas != null)
         {
-            if (other.GetComponent<PoisonGas>().gasIsActve == true)
-            {
-                isInPoisionGas = true;
-            }
-            else
-            {
-                isInPoisionGas = false;
-            }
+            isInPoisionGas = gas.gasIsActive;
         }
     }
 
