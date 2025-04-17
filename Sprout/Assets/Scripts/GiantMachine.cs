@@ -55,12 +55,12 @@ public class GiantMachine : MonoBehaviour, IVineInteractable
     void Start()
     {
         //$Machine Working
-        machineWorking = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Working");
+        machineWorking = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Sounds/Machine_Working");
         machineWorking.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         machineWorking.start();
 
 
-        machineTrapped = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Trapped");
+        machineTrapped = RuntimeManager.CreateInstance("event:/Sound Effects/Machine Sounds/Machine_Trapped");
         machineTrapped.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         machineTrapped.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
@@ -181,7 +181,7 @@ public class GiantMachine : MonoBehaviour, IVineInteractable
             isHeldByVines = false;
 
             machineTrapped.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Door Exploding");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Bomb Sounds/Bomb_Door_Exploding");
             Invoke("DeactivateConnectedObjects", 2f);
 
             //$Machine is destroyed

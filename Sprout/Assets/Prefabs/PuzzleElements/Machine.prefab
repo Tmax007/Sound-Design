@@ -367,12 +367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5abfd6fd18aba4bb99a2ac5e37d703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedObjects:
-  - {fileID: 0}
+  connectedObjects: []
   vineTransform: {fileID: 9067109389774509667}
   machineMesh: {fileID: 5146843909246889109}
   gears: {fileID: 997225085155054792}
-  isHeldByVines: 0
+  isHeldByVines: 1
 --- !u!54 &213668058060997575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -415,11 +414,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1678806847
-      Data2: 1105206792
-      Data3: -1230447953
-      Data4: 1996637430
-    Path: event:/Sound Effects/Machine Sounds/Machine_Working
+      Data1: 2108554004
+      Data2: 1295729485
+      Data3: -1705883242
+      Data4: -1235380483
+    Path: event:/Sound Effects/Machine Sounds/Machine_Trapped
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -430,7 +429,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 40
+  OverrideMaxDistance: 25
 --- !u!114 &5892491733292671228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,10 +445,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 110150816
-      Data2: 1304653965
-      Data3: 821359770
-      Data4: -1296609424
+      Data1: 2108554004
+      Data2: 1295729485
+      Data3: -1705883242
+      Data4: -1235380483
     Path: event:/Sound Effects/Machine Sounds/Machine_Trapped
   Event: 
   EventPlayTrigger: 0

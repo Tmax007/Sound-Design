@@ -12,56 +12,49 @@ public class WindTurbine : MonoBehaviour, IActivatable
 
     public float spinSpeed = 360f;
 
-    public FMOD.Studio.EventInstance fanSound;
+    private FMOD.Studio.EventInstance fanSound;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fanSound = RuntimeManager.CreateInstance("event:/Sound Effects/Wind Fan Working");
+        blowDirection = transform.forward;
+        windArea = GetComponent<BoxCollider>();
+
+        // Create fan loop sound
+        fanSound = RuntimeManager.CreateInstance("event:/Sound Effects/Wind_Fan_Working");
         fanSound.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
 
-        blowDirection = transform.forward;
-
-        windArea = GetComponent<BoxCollider>();   
-
-        if(isActivated)
+        if (isActivated)
         {
-            //windArea.enabled = true;
-            SpinTurbine();
-            windVFX.Play();
-            fanSound.start();
+            Activate(); // Properly start if already activated
         }
         else
         {
-            //windArea.enabled = false;
-            windVFX.Stop();
-            fanSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            Deactivate();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         blowDirection = transform.forward;
 
         if (isActivated)
         {
-            //windArea.enabled = true;
             SpinTurbine();
 
-            if(windVFX.isStopped)
+            if (windVFX.isStopped)
             {
-                //$Wind Fan Activate
                 windVFX.Play();
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Wind Fan Working");
             }
+
+            // Continuously update position in case turbine moves
+            fanSound.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         }
         else
         {
-            //$Wind Fan Deactivate
-
-            //windArea.enabled = false;
-            windVFX.Stop();
+            if (windVFX.isPlaying)
+            {
+                windVFX.Stop();
+            }
         }
     }
 
@@ -69,12 +62,23 @@ public class WindTurbine : MonoBehaviour, IActivatable
     {
         isActivated = true;
         fanSound.start();
+
+        if (!windVFX.isPlaying)
+        {
+            windVFX.Play();
+        }
     }
 
     public void Deactivate()
     {
         isActivated = false;
-        fanSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+        fanSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        if (windVFX.isPlaying)
+        {
+            windVFX.Stop();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -82,16 +86,16 @@ public class WindTurbine : MonoBehaviour, IActivatable
         PoisonGas gas = other.GetComponent<PoisonGas>();
         if (gas != null)
         {
-            Vector3 blowDirection = transform.forward;   // or whatever direction you need
             gas.StartBlowing(blowDirection);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<PoisonGas>() != null)
+        PoisonGas gas = other.GetComponent<PoisonGas>();
+        if (gas != null)
         {
-            other.gameObject.GetComponent<PoisonGas>().StopBlowing();
+            gas.StopBlowing();
         }
     }
 
@@ -100,5 +104,12 @@ public class WindTurbine : MonoBehaviour, IActivatable
         float currentZ = turbineMesh.localRotation.eulerAngles.z;
         float newZ = currentZ + spinSpeed * Time.deltaTime;
         turbineMesh.localRotation = Quaternion.Euler(0, 0, newZ);
+    }
+
+    private void OnDestroy()
+    {
+        // Clean up FMOD instance
+        fanSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        fanSound.release();
     }
 }
