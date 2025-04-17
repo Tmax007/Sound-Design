@@ -34,8 +34,8 @@ namespace PixelCrushers.DialogueSystem
             public UIScrollbarEnabler scrollbarEnabler = null;
         }
         [EventRef]
-        public string fmodEventPath;
-        public string npcTalkingSFX = "event:/Character/NPC_Non_Voice";
+        //public string fmodEventPath;
+        //public string npcTalkingSFX = "event:/Character/NPC_Non_Voice";
         public MMF_Player TalkingFeedback;
 
         /// <summary>
@@ -120,13 +120,13 @@ namespace PixelCrushers.DialogueSystem
             }
         }*/
 
-        protected override void PlayCharacterAudio(char c)
+        /*protected override void PlayCharacterAudio(char c)
         {
             if (!string.IsNullOrEmpty(fmodEventPath))
             {
-                RuntimeManager.PlayOneShot(fmodEventPath, transform.position);
+                //RuntimeManager.PlayOneShot(fmodEventPath, transform.position);
             }
-        }
+        }*/
 
         protected bool started = false;
         protected int charactersTyped = 0;
@@ -220,10 +220,6 @@ namespace PixelCrushers.DialogueSystem
         {
             StopTypewriterCoroutine();
             textComponent.text = text;
-            if (!string.IsNullOrEmpty(npcTalkingSFX))
-            {
-                RuntimeManager.PlayOneShot(npcTalkingSFX, transform.position);
-            }
             StartTypewriterCoroutine(fromIndex);
         }
 
