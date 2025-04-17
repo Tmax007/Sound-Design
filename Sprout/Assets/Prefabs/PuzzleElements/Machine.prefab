@@ -371,7 +371,7 @@ MonoBehaviour:
   vineTransform: {fileID: 9067109389774509667}
   machineMesh: {fileID: 5146843909246889109}
   gears: {fileID: 997225085155054792}
-  isHeldByVines: 1
+  isHeldByVines: 0
 --- !u!54 &213668058060997575
 Rigidbody:
   m_ObjectHideFlags: 0

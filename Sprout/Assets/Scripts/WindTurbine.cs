@@ -20,7 +20,7 @@ public class WindTurbine : MonoBehaviour, IActivatable
         windArea = GetComponent<BoxCollider>();
 
         // Create fan loop sound
-        fanSound = RuntimeManager.CreateInstance("event:/Sound Effects/Wind_Fan_Working");
+        //fanSound = RuntimeManager.CreateInstance("event:/Sound Effects/Wind_Fan_Working");
         fanSound.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
 
         if (isActivated)
