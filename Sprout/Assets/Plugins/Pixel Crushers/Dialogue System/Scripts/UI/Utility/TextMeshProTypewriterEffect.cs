@@ -35,6 +35,7 @@ namespace PixelCrushers.DialogueSystem
         }
         [EventRef]
         public string fmodEventPath;
+        public string npcTalkingSFX = "event:/Character/NPC_Non_Voice";
         public MMF_Player TalkingFeedback;
 
         /// <summary>
@@ -219,6 +220,10 @@ namespace PixelCrushers.DialogueSystem
         {
             StopTypewriterCoroutine();
             textComponent.text = text;
+            if (!string.IsNullOrEmpty(npcTalkingSFX))
+            {
+                RuntimeManager.PlayOneShot(npcTalkingSFX, transform.position);
+            }
             StartTypewriterCoroutine(fromIndex);
         }
 

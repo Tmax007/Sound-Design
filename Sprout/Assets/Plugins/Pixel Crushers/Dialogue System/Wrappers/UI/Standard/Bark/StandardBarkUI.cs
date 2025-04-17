@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
+using FMODUnity;
 using UnityEngine;
 
 namespace PixelCrushers.DialogueSystem.Wrappers
@@ -13,6 +14,16 @@ namespace PixelCrushers.DialogueSystem.Wrappers
     [AddComponentMenu("Pixel Crushers/Dialogue System/UI/Standard UI/Bark/Standard Bark UI")]
     public class StandardBarkUI : PixelCrushers.DialogueSystem.StandardBarkUI
     {
+        [EventRef]
+        public string barkAppearSFX = "event:/UI/Tooltip_Hover";
+
+        public void OnBarkStart()
+        {
+            if (!string.IsNullOrEmpty(barkAppearSFX))
+            {
+                RuntimeManager.PlayOneShot(barkAppearSFX, transform.position);
+            }
+        }
     }
 
 }

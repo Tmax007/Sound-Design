@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
+using FMODUnity;
 using UnityEngine;
 
 namespace PixelCrushers.DialogueSystem.Wrappers
@@ -12,6 +13,21 @@ namespace PixelCrushers.DialogueSystem.Wrappers
     [AddComponentMenu("Pixel Crushers/Dialogue System/UI/Standard UI/UI Effects/Standard UI Continue Button Fast Forward")]
     public class StandardUIContinueButtonFastForward : PixelCrushers.DialogueSystem.StandardUIContinueButtonFastForward
     {
+        [EventRef]
+        public string continueClickSFX = "event:/UI/Continue_Button_Click";
+
+        public override void OnFastForward()
+        {
+            // Play the FMOD sound at this object's position
+            if (!string.IsNullOrEmpty(continueClickSFX))
+            {
+                RuntimeManager.PlayOneShot(continueClickSFX, transform.position);
+            }
+
+            // Call the base method to preserve existing behavior
+            base.OnFastForward();
+        }
+
     }
 
 }
